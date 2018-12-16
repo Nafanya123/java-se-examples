@@ -21,9 +21,9 @@ public class SimpleExample {
             try {
 
                 String query = "CREATE TABLE users" +
-                        "(user_id varchar(500) NOT NULL," +
-                        "first_name varchar(255) NOT NULL," +
-                        "last_name varchar(255) NOT NULL," +
+                        "(user_id varchar(100) NOT NULL," +
+                        "first_name varchar(40) NOT NULL," +
+                        "last_name varchar(40) NOT NULL," +
                         "age number(4) NULL)";
 
                 preparedStatement = connection.prepareStatement(query);
