@@ -10,9 +10,9 @@ import java.util.Properties;
 
 public class OracleDriverManager {
 
-    public Connection openPostgresConnection() {
+    public Connection openOracleConnection() {
         try {
-            Driver driver = createPostgresDriver();
+            Driver driver = createOracleDriver();
             DriverManager.registerDriver(driver);
 
             Properties properties = loadProperties();
@@ -32,12 +32,12 @@ public class OracleDriverManager {
         return null;
     }
 
-    private Driver createPostgresDriver() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+    private Driver createOracleDriver() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         return (Driver) Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
     }
 
     private Properties loadProperties() {
-        String resourceName = "postgres.properties";
+        String resourceName = "oracle.properties";
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         Properties properties = new Properties();
         try (InputStream resourceStream = loader.getResourceAsStream(resourceName)) {

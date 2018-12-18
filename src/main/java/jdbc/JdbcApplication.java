@@ -9,7 +9,7 @@ public class JdbcApplication {
     public static void main(String[] args) throws SQLException {
         OracleDriverManager oracleDriverManager = new OracleDriverManager();
         Locale.setDefault(Locale.ENGLISH);
-        Connection connection = oracleDriverManager.openPostgresConnection();
+        Connection connection = oracleDriverManager.openOracleConnection();
         
         SimpleExample simpleExample = new SimpleExample(connection);
         simpleExample.selectExample();
